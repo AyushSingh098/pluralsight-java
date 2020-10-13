@@ -51,14 +51,17 @@ public class Main {
 
     private static void displayResult(char opCode, double leftVal, double rightVal, double result) {
         char symbol = symbolFromOpCode(opCode);
-        StringBuilder sb = new StringBuilder();
+
+        /*StringBuilder sb = new StringBuilder();
         sb.append(leftVal);
         sb.append(symbol);
         sb.append(rightVal);
         sb.append(" = ");
         sb.append(result);
-        String displayResult=sb.toString();
-        System.out.println(displayResult);
+        String displayResult=sb.toString();*/
+
+        String displayString = String.format("%.3f %c %.3f = %.3f", leftVal, symbol, rightVal, result);
+        System.out.println(displayString);
     }
 
     private static char symbolFromOpCode(char opCode){
