@@ -3,32 +3,36 @@ package com.pluralsight.calcengine;
 public class Main {
 
     public static void main(String[] args){
-        double value1=100.0d;
-        double value2=0.0d;
-        double result=0.0d;
-        char opCode='d';
+    double[] leftVals = {100.0d, 25.0d, 225.0d, 11.0d};
+    double[] rightVals = {0.0d, 25.0d, 225.0d, 11.0d};
+    char[] opCodes = {'d', 'a', 's', 'm'};
+    double[] results = new double[opCodes.length];
 
-
-        switch(opCode){
+    for(int index=0;index < opCodes.length;index++)
+    {
+        switch (opCodes[index]) {
             case 'a':
-                result=value1+value2;
+                results[index] = leftVals[index] + rightVals[index];
                 break;
             case 's':
-                result=value1-value2;
+                results[index] = leftVals[index] - rightVals[index];
                 break;
             case 'm':
-                result=value1*value2;
+                results[index] = leftVals[index] * rightVals[index];
                 break;
             case 'd':
-                result = value2 !=0 ? value1/value2 : 0.0d;
+                results[index] = rightVals[index] != 0 ? leftVals[index] / rightVals[index] : 0.0d;
                 break;
             default:
                 System.out.println("Invalid OpCode");
-                result=0;
+                results[index] = 0.0d;
                 break;
         }
+    }
 
-
+    for(double result: results){
         System.out.println(result);
+    }
+
     }
 }
