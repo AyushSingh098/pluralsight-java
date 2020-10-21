@@ -44,6 +44,11 @@ public class Main {
             equation.execute();
             equation.displayResult();
         }
+
+        MathEquation overloadedEquation = new MathEquation('d');
+        overloadedEquation.execute(100.0d, 2.0d);
+        overloadedEquation.displayResult();
+        System.out.println(MathEquation.getAverageResult());
     }
 
     static void executeInteractively(){
