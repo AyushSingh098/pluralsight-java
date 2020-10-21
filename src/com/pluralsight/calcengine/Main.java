@@ -31,6 +31,9 @@ public class Main {
 //    else {
 //        System.out.println("Error");
 //    }
+
+        Divider divider = new Divider();
+        doCalculations(divider, 100.0d,2.0d);
     }
     static void performCalculations(){
 
@@ -152,5 +155,12 @@ public class Main {
             value = Double.parseDouble(word);
         }
         return value;
+    }
+
+    static void doCalculations(CalculateBase calculation, double leftVal, double rightVal){
+        calculation.setLeftVal(leftVal);
+        calculation.setRightVal(rightVal);
+        calculation.calculate();
+        System.out.println(calculation.getResult());
     }
 }
